@@ -1,0 +1,20 @@
+$accents-2: #EAEAEA;
+$accents-6: #444;
+$accents-8: #111;
+
+.nav-container {
+  padding: 32px 24px;
+
+  .nav-link-container {
+    gap: 1.5rem;
+
+    .nav-link {
+      color: $accents-8;
+
+      &:hover {
+        background-color: $accents-2;
+        color: $accents-6;
+      }
+    }
+  }
+}
