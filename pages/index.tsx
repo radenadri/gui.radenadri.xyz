@@ -1,4 +1,5 @@
 import { Inter } from '@next/font/google'
+import Footer from '../components/Footer'
 
 import MainHead from '../components/MainHead'
 import Navbar from '../components/Navbar'
@@ -15,6 +16,7 @@ export default function Home() {
         <Navbar />
         <WhoAmI />
       </main>
+      <Footer />
     </>
   )
 }
