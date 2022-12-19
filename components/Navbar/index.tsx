@@ -1,29 +1,38 @@
 import Link from 'next/link'
 
 import { Button, Grid, Link as GeistLink } from '@geist-ui/core'
-import { Moon } from '@geist-ui/icons'
+import { Menu, Moon } from '@geist-ui/icons'
+
+import styles from './style.module.scss'
 
 const Navbar = () => {
   return (
-    <Grid.Container justify="center" className="nav-container">
+    <Grid.Container justify="center" className="container">
       <Grid
-        xs={24}
-        sm={12}
+        xs
+        sm={20}
+        lg={12}
+        xl={8}
         alignItems="center"
         justify="space-between">
 
         {/* Navigation Menu */}
-        <Grid.Container className="nav-link-container">
+        <Grid.Container xs={0} sm={12} className={styles.navLinkContainer}>
           <Link href="/about" legacyBehavior>
-            <GeistLink className="nav-link" block>Me</GeistLink>
+            <GeistLink className={styles.navLink} block>Me</GeistLink>
           </Link>
           <Link href="/works" legacyBehavior>
-            <GeistLink className="nav-link" block>Works</GeistLink>
+            <GeistLink className={styles.navLink} block>Works</GeistLink>
           </Link>
           <Link href="/journal" legacyBehavior>
-            <GeistLink className="nav-link" block>Journal</GeistLink>
+            <GeistLink className={styles.navLink} block>Journal</GeistLink>
           </Link>
-          <GeistLink className="nav-link" block href="https://drive.google.com/drive/folders/1tQ-XdvNNTeTvO3ubBxNL_075NFa0eARd" target="_blank">Resume</GeistLink>
+          <GeistLink className={styles.navLink} block href="https://drive.google.com/drive/folders/1tQ-XdvNNTeTvO3ubBxNL_075NFa0eARd" target="_blank">Resume</GeistLink>
+        </Grid.Container>
+
+        {/* Menu */}
+        <Grid.Container xs={12} sm={0}>
+          <Button auto scale={1} px={.6} type="abort" icon={<Menu />} />
         </Grid.Container>
 
         {/* Dark Mode */}

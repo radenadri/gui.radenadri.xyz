@@ -1,5 +1,6 @@
-import { GeistProvider, CssBaseline } from '@geist-ui/core'
 import type { AppProps } from 'next/app'
+
+import { GeistProvider, CssBaseline } from '@geist-ui/core'
 
 import '../styles/globals.scss'
 import 'inter-ui/inter.css'

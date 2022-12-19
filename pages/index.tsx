@@ -2,6 +2,7 @@ import { Inter } from '@next/font/google'
 
 import MainHead from '../components/MainHead'
 import Navbar from '../components/Navbar'
+import WhoAmI from '../components/WhoAmI'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,6 +13,7 @@ export default function Home() {
       <MainHead />
       <main className={inter.className}>
         <Navbar />
+        <WhoAmI />
       </main>
     </>
   )

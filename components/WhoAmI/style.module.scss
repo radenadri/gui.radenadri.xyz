@@ -1,0 +1,20 @@
+@import '../../styles/breakpoints';
+
+.whoAmI {
+
+  flex-direction: column-reverse;
+
+  @include breakpoint(sm) {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .avatar {
+    margin-bottom: 1.5rem;
+
+    @include breakpoint(sm) {
+      margin-bottom: 0;
+      justify-content: flex-end;
+    }
+  }
+}
