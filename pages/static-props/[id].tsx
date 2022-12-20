@@ -1,5 +1,6 @@
 import { Grid } from "@geist-ui/core";
-import postsData from '../../lib/data/posts.json';
+
+import postsData from '@/lib/data/posts.json';
 
 interface IPost {
   id: number
