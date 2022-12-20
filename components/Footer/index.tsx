@@ -6,8 +6,7 @@ const Footer = () => {
       <Grid.Container justify="center" className="container">
         <Grid
           xs
-          className="footer"
-          alignItems="center"
+          direction="column"
           justify="space-between">
             <Text className="text-muted">2022 © Adriana Eka Prayudha</Text>
             <div className="footer-link">
@@ -21,11 +20,6 @@ const Footer = () => {
         footer {
           max-width: 650px;
           margin: 0 auto;
-        }
-
-        .footer {
-          flex-direction: column;
-          justify-content: flex-start;
         }
 
         .footer-link {

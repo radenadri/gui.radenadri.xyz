@@ -7,7 +7,7 @@ import styles from './style.module.scss'
 
 const Navbar = () => {
   return (
-    <Grid.Container justify="center" className="container">
+    <Grid.Container className="container">
       <Grid
         xs
         alignItems="center"

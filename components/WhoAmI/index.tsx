@@ -7,8 +7,8 @@ const WhoAmI = () => {
   const { palette } = useTheme();
 
   return (
-    <Grid.Container justify="center" className={`container ${styles.whoAmI}`}>
-      <Grid xs={24} md={17} className={styles.info}>
+    <Grid.Container className={`container ${styles.whoAmI}`}>
+      <Grid xs={24} md={17}>
         <div>
           <Text h1 className="h1" margin={0}>Adriana Eka Prayudha</Text>
           <Text h5 className="text-muted font-normal" marginTop={.5}>
@@ -16,7 +16,7 @@ const WhoAmI = () => {
               color: palette.accents_8
             }}>Pentacode</GeistLink>
           </Text>
-          <Text h5 className="text-muted font-normal" marginTop={2}>
+          <Text h5 className="text-muted font-normal" marginTop={2} marginBottom={0}>
             Making awesome layout & efficient data fetching with ease. Also tinkering with database sometimes.
           </Text>
         </div>
