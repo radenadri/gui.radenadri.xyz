@@ -7,6 +7,7 @@
       "@/interfaces/*": ["interfaces/*"],
       "@/layouts/*": ["layouts/*"],
       "@/lib/*": ["lib/*"],
+      "@/store/*": ["store/*"],
       "@/themes/*": ["themes/*"],
       "@/types/*": ["types/*"],
     },

@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
 
-import ThemeContextProvider from '@/contexts/ThemeContextProvider'
+import ThemeContextProvider from '@/store/ThemeContextProvider'
 
 import 'inter-ui/inter.css'
 import '../styles/globals.css'
