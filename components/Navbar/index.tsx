@@ -10,9 +10,6 @@ const Navbar = () => {
     <Grid.Container justify="center" className="container">
       <Grid
         xs
-        sm={20}
-        lg={12}
-        xl={8}
         alignItems="center"
         justify="space-between">
 

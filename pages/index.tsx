@@ -16,6 +16,12 @@ export default function Home() {
         <Navbar />
         <WhoAmI />
       </main>
+      <style jsx>{`
+        main {
+          max-width: 650px;
+          margin: 0 auto;
+        }
+      `}</style>
       <Footer />
     </>
   )
