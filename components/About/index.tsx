@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Link as GeistLink, Text, useTheme } from "@geist-ui/core"
 
 const About = () => {
