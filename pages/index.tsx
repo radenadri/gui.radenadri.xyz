@@ -1,5 +1,5 @@
-import LatestThought from '@/components/LatestThought';
-import Layout from '@/components/Layout'
+import LatestThought from '@/components/LatestThought'
+import Layout from '@/layouts/Default'
 import WhoAmI from '@/components/WhoAmI'
 
 const Home = () => {
