@@ -1,13 +1,15 @@
-import { Grid, Text } from "@geist-ui/core"
+import { Grid, Text, useTheme } from "@geist-ui/core"
 
 import Thought from "@/components/Thought"
 
 const LatestThought = () => {
 
+  const { palette } = useTheme()
+
   return (
     <div className="container">
       <Text h2>Latest Thought</Text>
-      <Text h5 className="text-muted font-normal">
+      <Text h5 className="font-normal" style={{ color: palette.accents_6 }}>
         Recently I have been thinking about the following topics and trying to write about them.
       </Text>
       <Grid.Container marginTop={1} justify="space-between" gap={2}>

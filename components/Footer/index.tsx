@@ -1,6 +1,9 @@
-import { Grid, Link as GeistLink, Text } from "@geist-ui/core"
+import { Grid, Link as GeistLink, Text, useTheme } from "@geist-ui/core"
 
 const Footer = () => {
+
+  const { palette } = useTheme()
+
   return (
     <footer>
       <Grid.Container justify="center" className="container">
@@ -8,7 +11,7 @@ const Footer = () => {
           xs
           direction="column"
           justify="space-between">
-            <Text className="text-muted">2022 © Adriana Eka Prayudha</Text>
+            <Text style={{ color: palette.accents_6 }}>2022 © Adriana Eka Prayudha</Text>
             <div className="footer-link">
               <GeistLink underline href="https://github.com/radenadri">Github</GeistLink>
               ·

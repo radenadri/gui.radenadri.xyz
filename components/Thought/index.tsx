@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-import { Card, Text } from "@geist-ui/core"
+import { Card, Text, useTheme } from "@geist-ui/core"
 
 type DataProps = {
   data: ThoughtProps
@@ -14,12 +14,23 @@ type ThoughtProps = {
 
 const Thought = ({ data } : DataProps) => {
   const { title, excerpt, to } = data
+  const { palette } = useTheme()
 
   return (
-    <Card width="100%">
+    <Card className="thought-card" width="100%">
       <Text h4 my={0}>{title}</Text>
       <Text>{excerpt}</Text>
-      {to && <Link href={to}>Read this →</Link>}
+      {to && <Link href={to} className="custom-link">Read this →</Link>}
+      <style jsx global>{`
+        .thought-card:hover {
+          transform: scale(1.05);
+          transition: all 0.2s ease-in-out;
+        }
+
+        .custom-link {
+          color: ${palette.success};
+        }
+      `}</style>
     </Card>
   )
 }

@@ -1,28 +1,24 @@
+import { useState } from 'react'
 import type { AppProps } from 'next/app'
 
-import { GeistProvider, CssBaseline, Themes } from '@geist-ui/core'
+import { GeistProvider, CssBaseline } from '@geist-ui/core'
+import ThemeContext from '@/contexts/ThemeContext'
 
-import '../styles/globals.scss'
+import { coolLight, coolDark } from '@/themes/geist'
+
 import 'inter-ui/inter.css'
-
-const breakpoints = {
-  xs: { min: '0' },
-  sm: { min: '650px' },
-  md: { min: '900px' },
-  lg: { min: '1280px' },
-  xl: { min: '1920px' },
-}
+import '../styles/globals.css'
 
 export default function App({ Component, pageProps }: AppProps) {
-  const myTheme = Themes.createFromLight({
-    type: 'myTheme',
-    breakpoints,
-  })
+
+  const [theme, setTheme] = useState('coolLight')
 
   return (
-    <GeistProvider themes={[myTheme]} themeType="myTheme">
-      <CssBaseline />
-      <Component {...pageProps} />
-    </GeistProvider>
+      <ThemeContext.Provider value={{ theme, setTheme }}>
+        <GeistProvider themes={[coolLight, coolDark]} themeType={theme}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </GeistProvider>
+      </ThemeContext.Provider>
   )
 }
