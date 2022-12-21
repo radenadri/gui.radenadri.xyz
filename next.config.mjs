@@ -1,3 +1,6 @@
+import remarkFrontmatter from 'remark-frontmatter'
+import rehypeHighlight from 'rehype-highlight'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   webpack: (config, options) => {
@@ -19,11 +22,7 @@ const nextConfig = {
     return config;
   },
   reactStrictMode: true,
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
-  images: {
-    loader: 'imgix',
-    path: 'https://images.unsplash.com/',
-  },
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx']
 }
 
-module.exports = nextConfig
+export default nextConfig
