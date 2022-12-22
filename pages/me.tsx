@@ -1,13 +1,34 @@
 import Layout from '@/layouts/Default'
 
-import About from '@/components/About'
+import { getFileBySlug } from '@/lib/mdx'
+import MDXRenderer from '@/components/MDXRenderer'
 
-const Me = () => {
+type MeProps = {
+  authorDetails: {
+    code: string
+    slug: string
+    frontmatter: any
+  }
+}
+
+const Me = ({ authorDetails } : MeProps) => {
+  const { code } = authorDetails
+
   return (
     <Layout>
-      <About />
+      <MDXRenderer mdxSource={code} />
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+  const authorDetails = await getFileBySlug('authors', 'default')
+
+  return {
+    props: {
+      authorDetails
+    }
+  }
 }
 
 export default Me;

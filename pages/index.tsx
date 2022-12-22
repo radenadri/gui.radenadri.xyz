@@ -9,8 +9,6 @@ type HomeProps = {
 
 const Home = ({ posts } : HomeProps) => {
 
-  console.log({posts});
-
   return (
     <Layout>
       <WhoAmI />

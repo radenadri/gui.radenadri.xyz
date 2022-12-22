@@ -12,11 +12,14 @@ const ThemeContextProvider = ({ children } : ThemeContextProviderProps) => {
   const [theme, setTheme] = useState('coolLight')
 
   useEffect(() => {
-    const theme = localStorage.getItem('theme')
-    if (theme) {
-      setTheme(theme)
+    const currentTheme = localStorage.getItem('theme')
+
+    document.body.className = currentTheme || theme
+
+    if (currentTheme) {
+      setTheme(currentTheme)
     }
-  }, [])
+  }, [theme])
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>

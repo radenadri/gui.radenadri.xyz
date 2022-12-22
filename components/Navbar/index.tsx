@@ -17,6 +17,8 @@ const Navbar = () => {
   const switchTheme = () => {
     const newTheme = themeSwitcher(theme)
     setTheme(newTheme)
+
+    document.body.className = newTheme
   }
 
   return (
