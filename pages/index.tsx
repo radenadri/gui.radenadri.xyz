@@ -1,6 +1,9 @@
-import LatestThought from '@/components/LatestThought'
 import Layout from '@/layouts/Default'
+
+import LatestThought from '@/components/LatestThought'
 import WhoAmI from '@/components/WhoAmI'
+import Seo from '@/components/Seo'
+
 import ThoughType from '@/types/ThoughtType'
 
 import { getLatestPosts } from '@/lib/mdx'
@@ -13,6 +16,7 @@ const Home = ({ posts } : HomeProps) => {
 
   return (
     <Layout>
+      <Seo />
       <WhoAmI />
       <LatestThought thoughts={posts} />
     </Layout>
