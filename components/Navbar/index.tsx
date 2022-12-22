@@ -34,7 +34,7 @@ const Navbar = () => {
           <NavMenuItem to="/me" className="nav-link">Me</NavMenuItem>
           <NavMenuItem to="/works" className="nav-link">Works</NavMenuItem>
           <NavMenuItem to="/journal" className="nav-link">Journal</NavMenuItem>
-          <NavMenuItem to="https://drive.google.com/drive/folders/1tQ-XdvNNTeTvO3ubBxNL_075NFa0eARd" className="nav-link" target="_blank">Resume</NavMenuItem>
+          <NavMenuItem to="https://drive.google.com/drive/folders/1tQ-XdvNNTeTvO3ubBxNL_075NFa0eARd" isExternal className="nav-link" target="_blank">Resume</NavMenuItem>
         </NavMenu>
 
         {/* Menu */}
@@ -54,7 +54,7 @@ const Navbar = () => {
               <NavMenuItem to="/me" className="nav-link">Me</NavMenuItem>
               <NavMenuItem to="/works" className="nav-link">Works</NavMenuItem>
               <NavMenuItem to="/journal" className="nav-link">Journal</NavMenuItem>
-              <NavMenuItem to="https://drive.google.com/drive/folders/1tQ-XdvNNTeTvO3ubBxNL_075NFa0eARd" className="nav-link" target="_blank">Resume</NavMenuItem>
+              <NavMenuItem to="https://drive.google.com/drive/folders/1tQ-XdvNNTeTvO3ubBxNL_075NFa0eARd" isExternal className="nav-link" target="_blank">Resume</NavMenuItem>
             </NavMenu>
           </Drawer.Content>
         </Drawer>
