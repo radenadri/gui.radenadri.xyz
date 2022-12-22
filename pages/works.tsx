@@ -1,9 +1,12 @@
 import SectionHeader from "@/components/SectionHeader"
+import Seo from "@/components/Seo"
 import Thought from "@/components/Thought"
+
 import Layout from "@/layouts/Default"
 
 import projects from "@/lib/data/projects"
 import ProjectType from "@/types/ProjectType"
+
 import { Grid } from "@geist-ui/core"
 
 type WorksProps = {
@@ -14,11 +17,14 @@ const Works = ({ works } : WorksProps) => {
 
   return (
     <Layout>
+      <Seo
+        title="Works 💻"
+        description="All my recent works while tinkering with code editor." />
       <div className="container">
         <SectionHeader
           h1
           title="All works"
-          subtitle="All my recent works while tinkering with code editor" />
+          subtitle="All my recent works while tinkering with code editor." />
         <Grid.Container gap={2} marginTop={2}>
           {works.map((work, index) => (
             <Grid key={index} xs={24} sm={12}>
