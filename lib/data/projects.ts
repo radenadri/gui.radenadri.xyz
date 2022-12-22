@@ -39,7 +39,7 @@ const projects : Array<ProjectType> = [
   },
   {
     title: 'Cooktopia',
-    description: `Cooktopia is a website that allows users to share their recipes with others. Users can also look for recipes based on categories. The website is built with Gatsby and Contentful.`,
+    description: `Cooktopia is a website works as my cooking memories. Built with Gatsby and Contentful.`,
     imgSrc: '/static/images/projects/cooktopia.jpg',
     href: 'https://cooktopia.radenadri.xyz/',
   },
