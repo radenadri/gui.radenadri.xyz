@@ -1,27 +1,33 @@
-import { Grid, Text, useTheme } from "@geist-ui/core"
+import { Grid, Text } from "@geist-ui/core"
 
+import SectionHeader from "@/components/SectionHeader"
 import Thought from "@/components/Thought"
 
-const LatestThought = () => {
+import ThoughtType from "@/types/ThoughtType"
 
-  const { palette } = useTheme()
+type LatestThoughtProps = {
+  thoughts: Array<ThoughtType>
+}
+
+const LatestThought = ({ thoughts } : LatestThoughtProps) => {
 
   return (
     <div className="container">
-      <Text h2>Latest Thought</Text>
-      <Text h5 className="font-normal" style={{ color: palette.accents_6 }}>
-        Recently I have been thinking about the following topics and trying to write about them.
-      </Text>
+      <SectionHeader
+        title={'Latest Thought'}
+        subtitle={'Recently I have been thinking about the following topics and trying to write about them.'} />
       <Grid.Container marginTop={1} justify="space-between" gap={2}>
-        {Array(3).fill(0).map((_, i) => (
-          <Grid xs={24} sm key={i}>
-            <Thought data={{
-              title: "HTTP is extensible",
-              excerpt: "Introduced in HTTP/1.0, HTTP headers make this protocol.",
-              to: "#"
+        {thoughts ? thoughts.map((thought, i) => (
+          <Grid xs={24} sm={12} key={i}>
+            <Thought content={{
+              title: thought.data?.title,
+              excerpt: thought.data?.excerpt,
+              to: `/journal/${thought.slug}`
             }} />
           </Grid>
-        ))}
+        )) : (
+          <Text h1>No thoughts found</Text>
+        )}
       </Grid.Container>
     </div>
   );

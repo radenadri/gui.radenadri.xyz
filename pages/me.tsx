@@ -1,21 +1,22 @@
 import Layout from '@/layouts/Default'
+import MDXRenderer from '@/components/MDXRenderer'
+import MDXFileType from '@/types/MDXFileType'
 
 import { getFileBySlug } from '@/lib/mdx'
-import MDXRenderer from '@/components/MDXRenderer'
+import Head from 'next/head'
 
 type MeProps = {
-  authorDetails: {
-    code: string
-    slug: string
-    frontmatter: any
-  }
+  authorDetails: MDXFileType
 }
 
 const Me = ({ authorDetails } : MeProps) => {
-  const { code } = authorDetails
+  const { code, frontmatter : { name } } = authorDetails
 
   return (
     <Layout>
+      <Head>
+        <title>Me | {name}</title>
+      </Head>
       <MDXRenderer mdxSource={code} />
     </Layout>
   )

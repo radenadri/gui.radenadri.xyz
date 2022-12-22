@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Card, Text, useTheme } from "@geist-ui/core"
 
 type DataProps = {
-  data: ThoughtProps
+  content: ThoughtProps
 }
 
 type ThoughtProps = {
@@ -12,8 +12,9 @@ type ThoughtProps = {
   to: string
 }
 
-const Thought = ({ data } : DataProps) => {
-  const { title, excerpt, to } = data
+const Thought = ({ content } : DataProps) => {
+
+  const { title, excerpt, to } = content
   const { palette } = useTheme()
 
   return (

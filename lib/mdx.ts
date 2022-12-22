@@ -21,15 +21,25 @@ export const getPosts = (pageIndex : number) => {
 
       const { data, content } = matter(fileContent)
 
-      const slug = file.name.replace(/.mdx$/, '')
+      const slug = data?.slug
+
       return { data, content, slug }
     })
     // Sort posts by date in descending order
-    .sort((a, b) : any => (a?.data.publishedOn > b?.data.publishedOn ? '-1' : '1'))
+    .sort((a, b) : any => (a?.data.date > b?.data.date ? '-1' : '1'))
     // Filter out posts that are not published
     .filter((post) => post?.data.status === 'published')
+    // Take only 10 posts
+    // .slice(pageIndex * 10, pageIndex * 10 + 10)
 
   return posts
+}
+
+// Get latest posts for home page
+export const getLatestPosts = (amount: number) => {
+  const posts = getPosts(1)
+
+  return posts.slice(0, amount)
 }
 
 // Get file by type and slug

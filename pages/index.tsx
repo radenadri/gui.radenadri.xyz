@@ -1,10 +1,12 @@
 import LatestThought from '@/components/LatestThought'
 import Layout from '@/layouts/Default'
 import WhoAmI from '@/components/WhoAmI'
-import { getPosts } from '@/lib/mdx'
+import ThoughType from '@/types/ThoughtType'
+
+import { getLatestPosts } from '@/lib/mdx'
 
 type HomeProps = {
-  posts: any
+  posts: Array<ThoughType>
 }
 
 const Home = ({ posts } : HomeProps) => {
@@ -12,13 +14,13 @@ const Home = ({ posts } : HomeProps) => {
   return (
     <Layout>
       <WhoAmI />
-      <LatestThought />
+      <LatestThought thoughts={posts} />
     </Layout>
   )
 }
 
 export async function getStaticProps() {
-  const posts = await getPosts(1)
+  const posts = await getLatestPosts(2)
 
   return {
     props: {
