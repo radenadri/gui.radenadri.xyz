@@ -26,10 +26,14 @@ const StaticPropsDetail = ({ post: { id, title } } : Post) => {
 // Generates `/static-props/1` and `/static-props/2`
 export async function getStaticPaths() {
 
+  const paths = postsData.map((post : IPost) => ({
+    params: { id: post.id.toString() },
+  }))
+
+  console.log(paths)
+
   return {
-    paths: postsData.map((post : IPost) => ({
-      params: { id: post.id.toString() },
-    })),
+    paths,
     fallback: false, // can also be true or 'blocking'
   }
 }

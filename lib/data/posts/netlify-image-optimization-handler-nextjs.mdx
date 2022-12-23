@@ -3,9 +3,12 @@ title: 'Resolving Next.js Image optimization error on Netlify'
 date: '2022-08-08'
 status: published
 tags: ['nextjs', 'react', 'javascript', 'tips']
-slug: 'resolving-nextjs-image-optimization-error-on-netlify'
 excerpt: 'See how i handle the Next.js Image optimization error in Netlify.'
 ---
+
+import Seo from '@/components/Seo'
+
+<Seo title="Resolving Next.js Image optimization error on Netlify" />
 
 Next.js uses the next/image image component, which complements the `<img>` HTML component.
 This makes Next.js more suitable for modern website ecosystems.
@@ -19,7 +22,7 @@ triggered by the image optimization performed during the build process.
 This happen because the next/image component cannot optimize the image at build time
 but when the image is on demand. Take a look at the error below :
 
-```
+```plaintext
 Error: Image Optimization using Next.js' default loader is not compatible with 'next export'
 ```
 
@@ -28,7 +31,7 @@ the custom loader for `next/image`.
 
 In your `next.config` file, set the loader to `"custom"`
 
-```json
+```js
 module.exports = {
   images: {
     loader: 'custom',

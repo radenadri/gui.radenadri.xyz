@@ -4,7 +4,9 @@ import MainHead from '@/components/MainHead'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  variable: '--inter-font',
+})
 
 type LayoutProps = {
   children: React.ReactNode
@@ -15,7 +17,7 @@ const Layout = ({ children } : LayoutProps) => {
   return (
     <>
       <MainHead />
-      <main className={inter.className}>
+      <main className={inter.variable}>
         <Navbar />
         {children}
       </main>
