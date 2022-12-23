@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 import { bundleMDX } from 'mdx-bundler'
 
 // Get all posts
-export const getPosts = (pageIndex : number) => {
+export const getPosts = (pageIndex? : number, slug?: string) => {
   const dirFiles = fs.readdirSync(path.join(process.cwd(), 'lib', 'data', 'posts'), {
     withFileTypes: true,
   })
@@ -21,7 +21,8 @@ export const getPosts = (pageIndex : number) => {
 
       const { data, content } = matter(fileContent)
 
-      const slug = data?.slug
+      // const slug = data?.slug
+      const slug = file.name.replace('.mdx', '')
 
       return { data, content, slug }
     })
@@ -37,7 +38,7 @@ export const getPosts = (pageIndex : number) => {
 
 // Get latest posts for home page
 export const getLatestPosts = (amount: number) => {
-  const posts = getPosts(1)
+  const posts = getPosts()
 
   return posts.slice(0, amount)
 }

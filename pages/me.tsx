@@ -19,7 +19,9 @@ const Me = ({ authorDetails } : MeProps) => {
       <Seo
         title="Me ✨"
         description="I’ve been working on the field for almost 3 years, currently i’ve got a lot of interest to website and also mobile apps technologies." />
-      <MDXRenderer mdxSource={code} />
+      <div className="container">
+        <MDXRenderer mdxSource={code} />
+      </div>
     </Layout>
   )
 }

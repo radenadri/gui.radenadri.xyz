@@ -5,11 +5,7 @@ import MDXComponents from "@/components/MDXComponents"
 const MDXRenderer = ({ mdxSource, ...rest } : any) => {
   const MDXLayout = useMemo(() => getMDXComponent(mdxSource), [mdxSource])
 
-  return (
-    <div className="container">
-      <MDXLayout components={MDXComponents} {...rest} />
-    </div>
-  )
+  return <MDXLayout components={MDXComponents} {...rest} />
 }
 
 export default MDXRenderer
