@@ -76,7 +76,7 @@ export async function getStaticProps({ params : { slug } } : { params: { slug: s
           },
         ],
       ],
-      format: 'mdx',
+      development: false,
     },
     scope: data,
   })

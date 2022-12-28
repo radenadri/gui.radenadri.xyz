@@ -10,7 +10,6 @@ const MDXComponents = {
   h6: (props : any) => <Text h6 {...props} />,
   p: (props : any) => <Text p className="p" {...props} />,
   a: (props : any) => <GeistLink underline className="a" {...props} />,
-  code: (props : any) => <Code block {...props} />,
   hr: (props : any) => <Divider {...props} />,
   img: (props : any) => <Image alt={props.alt} {...props} />,
   table: (props : any) => <Table {...props} />,
