@@ -12,7 +12,7 @@
     "@geist-ui/core": "^2.3.8",
     "@geist-ui/icons": "^1.0.2",
     "@mdx-js/loader": "^2.2.1",
-    "@mdx-js/mdx": "^2.2.1",
+    "@mdx-js/mdx": "^2.3.0",
     "@mdx-js/react": "^2.2.1",
     "@next/font": "13.0.7",
     "@next/mdx": "^13.1.0",
