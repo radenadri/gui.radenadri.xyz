@@ -24,7 +24,7 @@
     "@vercel/og": "^0.0.21",
     "esbuild": "^0.16.10",
     "eslint": "8.30.0",
-    "eslint-config-next": "13.0.7",
+    "eslint-config-next": "13.2.3",
     "gray-matter": "^4.0.3",
     "inter-ui": "^3.19.3",
     "mdx-bundler": "^9.0.1",
