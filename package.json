@@ -15,7 +15,7 @@
     "@mdx-js/mdx": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "@next/font": "13.0.7",
-    "@next/mdx": "^13.1.0",
+    "@next/mdx": "^13.2.4",
     "@reach/disclosure": "^0.18.0",
     "@reach/tooltip": "^0.18.0",
     "@types/node": "18.15.10",
