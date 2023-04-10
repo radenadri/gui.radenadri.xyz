@@ -228,9 +228,9 @@
   version "13.2.4"
   resolved "https://registry.yarnpkg.com/@next/font/-/font-13.2.4.tgz#c8c2249e11338d2e04f3b721a62c560358de0e70"
 
-"@next/mdx@^13.1.0":
-  version "13.1.0"
-  resolved "https://registry.npmjs.org/@next/mdx/-/mdx-13.1.0.tgz"
+"@next/mdx@^13.2.4":
+  version "13.3.0"
+  resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-13.3.0.tgz#c7c8f98bab5be9407b18946d06b418c38cd8dab3"
   dependencies:
     source-map "^0.7.0"
 
@@ -2948,9 +2948,9 @@ type-fest@^0.20.2:
   version "0.20.2"
   resolved "https://registry.npmjs.org/type-fest/-/type-fest-0.20.2.tgz"
 
-typescript@4.9.5:
-  version "4.9.5"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-4.9.5.tgz"
+typescript@5.0.4:
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.0.4.tgz#b217fd20119bd61a94d4011274e0ab369058da3b"
 
 unbox-primitive@^1.0.2:
   version "1.0.2"
