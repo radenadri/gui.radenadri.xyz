@@ -228,7 +228,7 @@
   version "13.3.0"
   resolved "https://registry.yarnpkg.com/@next/font/-/font-13.3.0.tgz#790c5444348fad7aabbfc35a45bfc50505219725"
 
-"@next/mdx@^13.2.4":
+"@next/mdx@^13.3.0":
   version "13.3.0"
   resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-13.3.0.tgz#c7c8f98bab5be9407b18946d06b418c38cd8dab3"
   dependencies:
