@@ -19,7 +19,7 @@
     "@reach/disclosure": "^0.18.0",
     "@reach/tooltip": "^0.18.0",
     "@types/node": "20.2.5",
-    "@types/react": "18.2.11",
+    "@types/react": "18.2.12",
     "@types/react-dom": "18.2.4",
     "@vercel/og": "^0.5.7",
     "esbuild": "^0.18.1",
