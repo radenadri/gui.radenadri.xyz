@@ -22,7 +22,7 @@
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.6",
     "@vercel/og": "^0.5.9",
-    "esbuild": "^0.18.11",
+    "esbuild": "^0.18.17",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
     "gray-matter": "^4.0.3",
