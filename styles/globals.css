@@ -5,3 +5,7 @@
 div.pre {
   @apply !border-0;
 }
+
+.container {
+  @apply w-[inherit];
+}
