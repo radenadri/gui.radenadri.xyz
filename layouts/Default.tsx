@@ -1,4 +1,4 @@
-import { Inter } from '@next/font/google'
+import { Inter } from 'next/font/google'
 
 import MainHead from '@/components/MainHead'
 import Footer from '@/components/Footer'
@@ -13,7 +13,7 @@ type LayoutProps = {
   children: React.ReactNode
 }
 
-const Layout = ({ children } : LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
 
   return (
     <>

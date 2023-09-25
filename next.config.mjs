@@ -61,11 +61,6 @@ const nextConfig = {
       'github.githubassets.com' // GitHub Profile Picture
     ]
   },
-  experimental: {
-    fontLoaders: [
-      { loader: '@next/font/google', options: { subsets: ['latin'] } }
-    ]
-  },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,

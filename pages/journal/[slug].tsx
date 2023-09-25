@@ -6,11 +6,11 @@ import { MDXRemote } from 'next-mdx-remote'
 import moment from "moment"
 import fs from 'fs'
 import path from 'path'
-import rehypeHighlight from "rehype-highlight"
 import matter from "gray-matter"
 import remarkGfm from "remark-gfm";
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import MDXComponents from "@/components/MDXComponents"
+import rehypeHighlight from "rehype-highlight"
 
 type JournalDetailsProps = {
   post: {
@@ -19,7 +19,7 @@ type JournalDetailsProps = {
   }
 }
 
-const JournalDetails = ({ post } : JournalDetailsProps) => {
+const JournalDetails = ({ post }: JournalDetailsProps) => {
 
   const { data, mdxSource } = post
 
@@ -32,14 +32,14 @@ const JournalDetails = ({ post } : JournalDetailsProps) => {
           subtitle={`Published on ${moment(data.date).format('dddd, DD MMMM YYYY')}`} />
       </div>
       <div className="container" style={{ paddingTop: 0 }}>
-        <MDXRemote {...mdxSource} components={MDXComponents} />
+        {mdxSource && <MDXRemote {...mdxSource} components={MDXComponents} />}
       </div>
     </Layout>
   )
 }
 
-export async function getStaticPaths() {
-  const journals = await getPosts()
+export function getStaticPaths() {
+  const journals = getPosts()
 
   const paths = journals.map(journal => ({
     params: {
@@ -53,7 +53,7 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params : { slug } } : { params: { slug: string } }) {
+export async function getStaticProps({ params: { slug } }: { params: { slug: string } }) {
 
   const fileContent = fs.readFileSync(
     path.join(process.cwd(), 'lib', 'data', 'posts', `${slug}.mdx`),
@@ -61,29 +61,23 @@ export async function getStaticProps({ params : { slug } } : { params: { slug: s
   )
 
   const { data, content } = matter(fileContent)
+
   const mdxSource = await serialize(content, {
-    // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [remarkGfm],
+      remarkPlugins: [
+        remarkGfm
+      ],
       rehypePlugins: [
         rehypeHighlight,
-        [
-          rehypeAutolinkHeadings,
-          {
-            properties: {
-              className: ['anchor'],
-            },
-          },
-        ],
+        rehypeAutolinkHeadings,
       ],
-      development: false,
     },
-    scope: data,
+    parseFrontmatter: true
   })
 
   return {
     props: {
-      post : {
+      post: {
         data,
         mdxSource
       }

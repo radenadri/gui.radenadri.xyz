@@ -17,13 +17,13 @@ const WhoAmI = () => {
             }}>Pentacode</GeistLink>
           </Text>
           <Text h5 className="font-normal" marginTop={2} marginBottom={0} style={{ color: palette.accents_6 }}>
-            Making awesome layout & efficient data fetching with ease. Also tinkering with database sometimes.
+            I am software engineer that specialized in frontend development with a passion for creating engaging digital experiences.
           </Text>
         </div>
       </Grid>
       <Grid xs={24} md={7} className="avatar">
         <div style={{ width: '100px', height: '100px', position: 'relative' }}>
-          <Image fill src="/avatar.png" alt="me" placeholder="blur" blurDataURL="/avatar.png"/>
+          <Image fill src="/avatar.png" alt="me" placeholder="blur" blurDataURL="/avatar.png" />
         </div>
       </Grid>
       <style jsx global>{`

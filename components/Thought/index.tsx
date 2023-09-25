@@ -18,7 +18,7 @@ type ThoughtProps = {
   to: string
 }
 
-const Thought = ({ content, isExternal = false, list = false } : DataProps) => {
+const Thought = ({ content, isExternal = false, list = false }: DataProps) => {
 
   const isXS = useMediaQuery('xs')
 
@@ -35,12 +35,12 @@ const Thought = ({ content, isExternal = false, list = false } : DataProps) => {
             fill
             draggable={false}
           />
-      </div>
+        </div>
       )}
       <Card.Content>
         <Text h4 my={0}>{title}</Text>
         {excerpt && <Text>{excerpt}</Text>}
-        {to && (isExternal ? ( <GeistLink href={to} className="custom-link" target="_blank">View More →</GeistLink> ) : <Link href={to} className="custom-link">Read this →</Link> )}
+        {to && (isExternal ? (<GeistLink href={to} className="custom-link" target="_blank">View More →</GeistLink>) : <Link href={to} className="custom-link">Read this →</Link>)}
       </Card.Content>
     </Card>
   )

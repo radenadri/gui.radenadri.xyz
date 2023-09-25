@@ -5,6 +5,7 @@ import { MDXProvider } from '@mdx-js/react'
 import MDXComponents from '@/components/MDXComponents'
 import ThemeContextProvider from '@/store/ThemeContextProvider'
 
+import '@/styles/globals.css'
 import 'inter-ui/inter.css'
 
 const theme = Themes.getPresets();
