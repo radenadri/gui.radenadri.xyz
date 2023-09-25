@@ -5,10 +5,11 @@ type NavMenuItemProps = {
   children: React.ReactNode
   to: string
   isExternal?: boolean
-  [x:string]: any
+  [x: string]: any
 }
 
-const NavMenuItem = ({ children, to, isExternal = false, ...props } : NavMenuItemProps) => {
+const NavMenuItem = ({ children, to, isExternal = false, ...props }: NavMenuItemProps) => {
+
   return (
     <>
       {isExternal ? (

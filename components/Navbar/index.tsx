@@ -1,5 +1,7 @@
 import { useContext, useState } from 'react'
+import { useRouter } from 'next/router'
 
+import clsx from 'clsx'
 import { Button, Drawer, Grid, useTheme } from '@geist-ui/core'
 import { Menu, Moon, Sun } from '@geist-ui/icons'
 
@@ -13,6 +15,15 @@ const Navbar = () => {
   const [open, setOpen] = useState(false)
   const { theme, setTheme } = useContext(ThemeContext)
   const { palette } = useTheme()
+  const router = useRouter()
+
+  const linkActive = (to: string): string | boolean => {
+    if (router.pathname !== to) {
+      return false
+    }
+
+    return 'active'
+  }
 
   const switchTheme = () => {
     const newTheme = themeSwitcher(theme)
@@ -30,10 +41,10 @@ const Navbar = () => {
 
         {/* Navigation Menu */}
         <NavMenu xs={0} sm={16} className="nav-link-container">
-          <NavMenuItem to="/" className="nav-link">Home</NavMenuItem>
-          <NavMenuItem to="/me" className="nav-link">Me</NavMenuItem>
-          <NavMenuItem to="/works" className="nav-link">Works</NavMenuItem>
-          <NavMenuItem to="/journal" className="nav-link">Journal</NavMenuItem>
+          <NavMenuItem to="/" className={`nav-link ${linkActive('/')}`}>Home</NavMenuItem>
+          <NavMenuItem to="/me" className={`nav-link ${linkActive('/me')}`}>Me</NavMenuItem>
+          <NavMenuItem to="/works" className={`nav-link ${linkActive('/works')}`}>Works</NavMenuItem>
+          <NavMenuItem to="/journal" className={`nav-link ${linkActive('/journal')}`}>Journal</NavMenuItem>
           <NavMenuItem to="https://drive.google.com/drive/folders/1tQ-XdvNNTeTvO3ubBxNL_075NFa0eARd" isExternal className="nav-link" target="_blank">Resume</NavMenuItem>
         </NavMenu>
 
@@ -65,8 +76,18 @@ const Navbar = () => {
           gap: 1.5rem;
         }
 
+        .nav-link {
+          color: ${palette.accents_6} !important;
+        }
+
+        .nav-link.active {
+          font-weight: 600;
+        }
+
         .nav-link:hover {
+          background-color: ${palette.accents_2} !important;
           color: ${palette.accents_8} !important;
+          transition: all .2s ease-in-out;
         }
 
         .drawer {
@@ -75,7 +96,7 @@ const Navbar = () => {
           align-items: flex-start;
         }
       `}</style>
-    </Grid.Container>
+    </Grid.Container >
   )
 }
 
