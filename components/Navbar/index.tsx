@@ -61,10 +61,10 @@ const Navbar = () => {
           <Drawer.Title>Menu</Drawer.Title>
           <Drawer.Content>
             <NavMenu direction="column" className="nav-link-container">
-              <NavMenuItem to="/" className="nav-link">Home</NavMenuItem>
-              <NavMenuItem to="/me" className="nav-link">Me</NavMenuItem>
-              <NavMenuItem to="/works" className="nav-link">Works</NavMenuItem>
-              <NavMenuItem to="/journal" className="nav-link">Journal</NavMenuItem>
+              <NavMenuItem to="/" className={`nav-link ${linkActive('/')}`}>Home</NavMenuItem>
+              <NavMenuItem to="/me" className={`nav-link ${linkActive('/me')}`}>Me</NavMenuItem>
+              <NavMenuItem to="/works" className={`nav-link ${linkActive('/works')}`}>Works</NavMenuItem>
+              <NavMenuItem to="/journal" className={`nav-link ${linkActive('/journal')}`}>Journal</NavMenuItem>
               <NavMenuItem to="https://drive.google.com/drive/folders/1tQ-XdvNNTeTvO3ubBxNL_075NFa0eARd" isExternal className="nav-link" target="_blank">Resume</NavMenuItem>
             </NavMenu>
           </Drawer.Content>
