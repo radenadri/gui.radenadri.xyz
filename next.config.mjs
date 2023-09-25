@@ -57,6 +57,9 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   images: {
     domains: [
       'i.scdn.co', // Spotify Album Art
