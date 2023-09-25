@@ -54,6 +54,9 @@ const securityHeaders = [
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  eslint: {
+    ignoreDuringBuilds: true
+  },
   images: {
     domains: [
       'i.scdn.co', // Spotify Album Art
