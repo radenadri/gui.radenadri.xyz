@@ -1,7 +1,5 @@
 import { useContext, useState } from 'react'
 import { useRouter } from 'next/router'
-
-import clsx from 'clsx'
 import { Button, Drawer, Grid, useTheme } from '@geist-ui/core'
 import { Menu, Moon, Sun } from '@geist-ui/icons'
 
