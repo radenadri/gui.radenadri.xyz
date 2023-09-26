@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  @apply h-full;
+}
+
+#__next {
+  @apply h-full;
+}
+
 div.pre {
   @apply !border-0;
 }

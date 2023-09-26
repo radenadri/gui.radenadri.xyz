@@ -22,6 +22,7 @@
     "esbuild": "^0.19.3",
     "eslint": "8.50.0",
     "eslint-config-next": "13.5.2",
+    "framer-motion": "^10.16.4",
     "gray-matter": "^4.0.3",
     "inter-ui": "^3.19.3",
     "mdx-bundler": "^9.2.1",
@@ -35,6 +36,7 @@
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^3.0.1",
     "remark-mdx-frontmatter": "^3.0.0",
+    "sharp": "^0.32.6",
     "typescript": "5.2.2"
   },
   "devDependencies": {

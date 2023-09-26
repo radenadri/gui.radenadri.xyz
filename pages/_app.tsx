@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app'
+
 import { Themes } from '@geist-ui/core'
 import { MDXProvider } from '@mdx-js/react'
 
@@ -6,9 +7,14 @@ import MDXComponents from '@/components/MDXComponents'
 import ThemeContextProvider from '@/store/ThemeContextProvider'
 
 import '@/styles/globals.css'
-import 'inter-ui/inter.css'
+// import 'inter-ui/inter.css'
+import { AnimatePresence } from 'framer-motion'
 
 const theme = Themes.getPresets();
+
+const onExitComplete = () => {
+  window.scrollTo({ top: 0 })
+}
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -18,7 +24,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeContextProvider>
       <MDXProvider components={MDXComponents}>
-        <Component {...pageProps} />
+        <AnimatePresence initial={false} mode="wait" onExitComplete={onExitComplete}>
+          <Component {...pageProps} />
+        </AnimatePresence>
         <style jsx global>{`
           .font-normal {
             font-weight: 400;

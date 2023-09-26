@@ -11,6 +11,8 @@ import remarkGfm from "remark-gfm";
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import MDXComponents from "@/components/MDXComponents"
 import rehypeHighlight from "rehype-highlight"
+import PageTransition from "@/components/PageTransition"
+import { useRef } from "react"
 
 type JournalDetailsProps = {
   post: {
@@ -22,19 +24,22 @@ type JournalDetailsProps = {
 const JournalDetails = ({ post }: JournalDetailsProps) => {
 
   const { data, mdxSource } = post
+  const ref = useRef()
 
   return (
-    <Layout>
-      <div className="container" style={{ paddingBottom: 0 }}>
-        <SectionHeader
-          h1
-          title={data.title}
-          subtitle={`Published on ${moment(data.date).format('dddd, DD MMMM YYYY')}`} />
-      </div>
-      <div className="container" style={{ paddingTop: 0 }}>
-        {mdxSource && <MDXRemote {...mdxSource} components={MDXComponents} />}
-      </div>
-    </Layout>
+    <PageTransition ref={ref.current}>
+      <Layout>
+        <div className="container" style={{ paddingBottom: 0 }}>
+          <SectionHeader
+            h1
+            title={data.title}
+            subtitle={`Published on ${moment(data.date).format('dddd, DD MMMM YYYY')}`} />
+        </div>
+        <div className="container" style={{ paddingTop: 0 }}>
+          {mdxSource && <MDXRemote {...mdxSource} components={MDXComponents} />}
+        </div>
+      </Layout>
+    </PageTransition>
   )
 }
 

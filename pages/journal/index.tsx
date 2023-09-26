@@ -6,38 +6,43 @@ import Layout from "@/layouts/Default"
 import ThoughType from "@/types/ThoughtType"
 
 import { getPosts } from "@/lib/mdx"
+import PageTransition from "@/components/PageTransition"
+import { useRef } from "react"
 
 type JournalProps = {
   journals: Array<ThoughType>
 }
 
-const Journal = ({ journals } : JournalProps) => {
+const Journal = ({ journals }: JournalProps) => {
 
   const isXS = useMediaQuery('xs')
+  const ref = useRef()
 
   return (
-    <Layout>
-      <div className="container">
-        <SectionHeader
-          h1
-          title="Journal"
-          subtitle="A collection of my thoughts and ideas." />
-        { journals &&
-          <Grid.Container gap={isXS ? 2 : 1} marginTop={2} direction="column">
-            {journals.map((journal, i) => (
-              <Thought
-                list
-                key={i}
-                content={{
-                  title: journal.data.title,
-                  to: `journal/${journal.slug}`,
-                  date: journal.data.date
-                }} />
-            ))}
-          </Grid.Container>
-        }
-      </div>
-    </Layout>
+    <PageTransition ref={ref.current}>
+      <Layout>
+        <div className="container">
+          <SectionHeader
+            h1
+            title="Journal"
+            subtitle="A collection of my thoughts and ideas." />
+          {journals &&
+            <Grid.Container gap={isXS ? 2 : 1} marginTop={2} direction="column">
+              {journals.map((journal, i) => (
+                <Thought
+                  list
+                  key={i}
+                  content={{
+                    title: journal.data.title,
+                    to: `journal/${journal.slug}`,
+                    date: journal.data.date
+                  }} />
+              ))}
+            </Grid.Container>
+          }
+        </div>
+      </Layout>
+    </PageTransition>
   )
 }
 

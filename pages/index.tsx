@@ -7,24 +7,31 @@ import Seo from '@/components/Seo'
 import ThoughType from '@/types/ThoughtType'
 
 import { getLatestPosts } from '@/lib/mdx'
+import PageTransition from '@/components/PageTransition'
+import { useRef } from 'react'
 
 type HomeProps = {
   posts: Array<ThoughType>
+  ref: any
 }
 
-const Home = ({ posts } : HomeProps) => {
+const Home = ({ posts }: HomeProps) => {
+
+  const ref = useRef()
 
   return (
-    <Layout>
-      <Seo />
-      <WhoAmI />
-      <LatestThought thoughts={posts} />
-    </Layout>
+    <PageTransition ref={ref.current}>
+      <Layout>
+        <Seo />
+        <WhoAmI />
+        <LatestThought thoughts={posts} />
+      </Layout>
+    </PageTransition>
   )
 }
 
-export async function getStaticProps() {
-  const posts = await getLatestPosts(2)
+export function getStaticProps() {
+  const posts = getLatestPosts(2)
 
   return {
     props: {
