@@ -7,7 +7,7 @@ import MDXComponents from '@/components/MDXComponents'
 import ThemeContextProvider from '@/store/ThemeContextProvider'
 
 import '@/styles/globals.css'
-// import 'inter-ui/inter.css'
+import 'inter-ui/inter.css'
 import { AnimatePresence } from 'framer-motion'
 
 const theme = Themes.getPresets();
