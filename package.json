@@ -21,7 +21,7 @@
     "@vercel/og": "^0.5.17",
     "esbuild": "^0.19.4",
     "eslint": "8.51.0",
-    "eslint-config-next": "13.5.3",
+    "eslint-config-next": "13.5.4",
     "framer-motion": "^10.16.4",
     "gray-matter": "^4.0.3",
     "inter-ui": "^3.19.3",
